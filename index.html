@@ -6,17 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" async></script>
     <title>Document</title>
 </head>
+
 <body>
-    <div class="carousel">
-        <ul class="slide-container">
-            <li class="slide"></li>
-            <li class="slide"></li>
-            <li class="slide"></li>
-        </ul>
-        <button class="arrow" id="arrow-prev">&#8249;</button>
-        <button class="arrow" id="arrow-next">&#8250;</button>
+    <div id="carousel">
+        <div id="container">
+        </div>
+        <img src="arrow.png" class="button" id="d">
+        <img src="arrow.png" class="button" id="g">
     </div>
+    <script>
+        document.body.onload = function () {
+            nbr = 5;
+            p = 0;
+
+            var container = document.getElementById("container");
+            var carousel = document.getElementById("carousel");
+            var g = document.getElementById("g");
+            var d = document.getElementById("d");
+
+            container.style.width = (800 * nbr) + "px";
+            for (i = 1; i <= nbr; i++) {
+                var div = document.createElement("div");
+                div.className = "photo";
+                div.style.backgroundImage = "url('imgs/img-" + i + ".png')";
+                container.appendChild(div)
+            }
+        }
+    </script>
 </body>
+
 </html>
